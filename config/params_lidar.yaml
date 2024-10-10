@@ -4,11 +4,11 @@ PROJECT_NAME: "emv_lio"
 emv_lio:
 
   # Topics
-  pointCloudTopic: "/hesai/pandar"               # Point cloud data
-  imuTopic: "/imu_data"                         # IMU data
+  pointCloudTopic: "/ouster/points"               # Point cloud data
+  imuTopic: "/ouster/imu"                         # IMU data
 
   # Heading
-  useImuHeadingInitialization: true          # if using GPS data, set to "true"
+  useImuHeadingInitialization: false          # if using GPS data, set to "true"
   
   # Export settings
   savePCD: false                              # https://github.com/TixiaoShan/LIO-SAM/issues/3
@@ -16,36 +16,36 @@ emv_lio:
 
   # lidar Settings
   N_SCAN: 32                                  # number of lidar channel (i.e., 16, 32, 64, 128)
-  Horizon_SCAN: 2000                          # lidar horizontal resolution (Velodyne:1800, Ouster:512,1024,2048)
+  Horizon_SCAN: 1024                          # lidar horizontal resolution (Velodyne:1800, Ouster:512,1024,2048)
   ang_res_y: 1.0                              # vertical resolution of lidar
-  lidar_type: 2                               # 1 for ouster, 2 for hesai, 3 for velodyne
-  timeField: "timestamp"                      # point timestamp field, Velodyne - "time", Ouster - "t", hesai - "timestamp"
+  lidar_type: 1                               # 1 for ouster, 2 for hesai, 3 for velodyne
+  timeField: "t"                      # point timestamp field, Velodyne - "time", Ouster - "t", hesai - "timestamp"
   downsampleRate: 2                           # default: 1. Downsample your data if too many points. i.e., 16 = 64 / 4, 16 = 16 / 1 
-  lidarMaxRange: 50.0
-  lidarMinRange: 0.5
-  NUM_OF_CAM: 2
+  lidarMaxRange: 100.0
+  lidarMinRange: 0.1
+  NUM_OF_CAM: 0
   feature_enable: 0
   remove_noise: 0
 
   # noise removal setting
-  min_cluster_size: 10
+  min_cluster_size: 1
   segment_valid_point_num: 5
   segment_valid_line_num: 3
 
   # IMU Settings
-  imuAccNoise: 0.03015059
-  imuGyrNoise: 0.42306179
-  imuAccBiasN: 0.00198931
-  imuGyrBiasN: 0.00015932
-  imuGravity: 9.80
+  imuAccNoise: 0.0022281160035059417 
+  imuGyrNoise: 0.00011667951042710442
+  imuAccBiasN: 0.00011782392708033614
+  imuGyrBiasN: 2.616129872371749e-06 
+  imuGravity: 9.78
   
   # Extrinsics (lidar -> IMU)
-  extrinsicTrans: [-0.0204, 0.0175, 0.0642]
-  extrinsicRot: [-0.9741, 0.2262, 0.0008, -0.2261, -0.9740, 0.0147, 0.0041, 0.0141, 0.9999]
+  extrinsicTrans: [0, 0, 0]
+  extrinsicRot: [1, 0, 0, 0, 1, 0, 0, 0, 1]
   #extrinsicTrans: [-0.0162, 0.0207, -0.0644]
   #extrinsicRot: [-0.9741, -0.2262, 0.0041, 0.2261, -0.9740, 0.0141, 0.0008, 0.0147, 0.9999]
   # extrinsicRPY: [0, 1, 0, -1, 0, 0, 0, 0, 1]
-  extrinsicRPY: [0, -1, 0, -1, 0, 0, 0, 0, -1]
+  extrinsicRPY: [1, 0, 0, 0, 1, 0, 0, 0, 1]
   # LOAM feature threshold
   edgeThreshold: 1.0
   surfThreshold: 0.1
@@ -53,9 +53,9 @@ emv_lio:
   surfFeatureMinValidNum: 100
 
   # voxel filter paprams
-  odometrySurfLeafSize: 0.4                     # default: 0.4
-  mappingCornerLeafSize: 0.2                    # default: 0.2
-  mappingSurfLeafSize: 0.4                      # default: 0.4
+  odometrySurfLeafSize: 0.2                     # default: 0.4
+  mappingCornerLeafSize: 0.1                    # default: 0.2
+  mappingSurfLeafSize: 0.2                      # default: 0.4
 
   # robot motion constraint (in case you are using a 2D robot)
   z_tollerance: 1000        # meters

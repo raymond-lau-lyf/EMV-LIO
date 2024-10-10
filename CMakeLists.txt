@@ -131,3 +131,12 @@ add_executable(${PROJECT_NAME}_mapOptmization src/lidar_odometry/mapOptmization.
 add_dependencies(${PROJECT_NAME}_mapOptmization ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 target_compile_options(${PROJECT_NAME}_mapOptmization PRIVATE ${OpenMP_CXX_FLAGS})
 target_link_libraries(${PROJECT_NAME}_mapOptmization PRIVATE ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES} ${OpenMP_CXX_FLAGS} gtsam)
+
+
+######################
+### Python Scripts
+######################
+catkin_install_python(PROGRAMS
+  scripts/split_thermal_images.py  # Add this line to install your Python script
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

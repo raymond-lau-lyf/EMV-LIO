@@ -1,6 +1,6 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 85
+    Help Height: 0
     Name: Displays
     Property Tree Widget:
       Expanded:
@@ -8,30 +8,27 @@ Panels:
         - /Visual Feature1
         - /Visual Odometry1
         - /Visual Odometry1/Feature cloud1
-        - /Lidar Odometry1
         - /Lidar Odometry1/Cloud (raw)1
         - /Lidar Odometry1/Dense Map1
-        - /Loop Closure1
-        - /PointCloud1
-        - /PointCloud2
-      Splitter Ratio: 0.459962755
-    Tree Height: 250
+      Splitter Ratio: 0.45996275544166565
+    Tree Height: 758
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
     Expanded: ~
     Name: Tool Properties
-    Splitter Ratio: 0.588679016
+    Splitter Ratio: 0.5886790156364441
   - Class: rviz/Views
     Expanded:
       - /Current View1
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz/Time
-    Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Image Feature
+    SyncSource: Dense Map
+Preferences:
+  PromptSaveOnExit: true
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -39,19 +36,23 @@ Visualization Manager:
   Displays:
     - Class: rviz/Group
       Displays:
-        - Class: rviz/Axes
+        - Alpha: 1
+          Class: rviz/Axes
           Enabled: true
           Length: 1
           Name: odom
-          Radius: 0.300000012
+          Radius: 0.30000001192092896
           Reference Frame: odom
+          Show Trail: false
           Value: true
-        - Class: rviz/Axes
+        - Alpha: 1
+          Class: rviz/Axes
           Enabled: true
           Length: 1
           Name: base_link
-          Radius: 0.300000012
+          Radius: 0.30000001192092896
           Reference Frame: base_link
+          Show Trail: false
           Value: true
       Enabled: true
       Name: Links
@@ -69,7 +70,7 @@ Visualization Manager:
           Color: 255; 255; 255
           Color Transformer: Intensity
           Decay Time: 0
-          Enabled: false
+          Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
           Max Intensity: 0
@@ -86,7 +87,7 @@ Visualization Manager:
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: false
-          Value: false
+          Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
@@ -102,15 +103,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 205
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Depth cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.100000001
+          Size (m): 0.10000000149011612
           Style: Points
           Topic: /emv_lio/vins/depth/depth_cloud
           Unreliable: false
@@ -130,7 +129,7 @@ Visualization Manager:
           Unreliable: false
           Value: true
         - Class: rviz/Image
-          Enabled: false
+          Enabled: true
           Image Topic: /emv_lio/vins/depth/depth_image
           Max Value: 1
           Median window: 5
@@ -140,7 +139,7 @@ Visualization Manager:
           Queue Size: 2
           Transport Hint: raw
           Unreliable: false
-          Value: false
+          Value: true
       Enabled: true
       Name: Visual Feature
     - Class: rviz/Group
@@ -148,8 +147,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 16.5232944
-            Min Value: 0.617817879
+            Max Value: 16.52329444885254
+            Min Value: 0.6178178787231445
             Value: false
           Axis: Z
           Channel Name: intensity
@@ -160,15 +159,13 @@ Visualization Manager:
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 1
           Min Color: 255; 85; 255
-          Min Intensity: 0
           Name: Feature cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 10
-          Size (m): 0.300000012
+          Size (m): 0.30000001192092896
           Style: Points
           Topic: /emv_lio/vins/odometry/point_cloud
           Unreliable: false
@@ -178,8 +175,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 16.5232944
-            Min Value: 0.617817879
+            Max Value: 16.52329444885254
+            Min Value: 0.6178178787231445
             Value: false
           Axis: Z
           Channel Name: intensity
@@ -190,21 +187,43 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 85; 255; 0
-          Max Intensity: 0
           Min Color: 255; 85; 255
-          Min Intensity: 0
           Name: History cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 5
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /emv_lio/vins/odometry/history_cloud
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: false
           Value: false
+        - Alpha: 1
+          Buffer Length: 1
+          Class: rviz/Path
+          Color: 25; 255; 0
+          Enabled: true
+          Head Diameter: 0.30000001192092896
+          Head Length: 0.20000000298023224
+          Length: 0.30000001192092896
+          Line Style: Lines
+          Line Width: 0.029999999329447746
+          Name: VINS-Path
+          Offset:
+            X: 0
+            Y: 0
+            Z: 0
+          Pose Color: 255; 85; 255
+          Pose Style: None
+          Queue Size: 10
+          Radius: 0.029999999329447746
+          Shaft Diameter: 0.10000000149011612
+          Shaft Length: 0.10000000149011612
+          Topic: /emv_lio/vins/odometry/path
+          Unreliable: false
+          Value: true
       Enabled: true
       Name: Visual Odometry
     - Class: rviz/Group
@@ -214,11 +233,11 @@ Visualization Manager:
           Class: rviz/Path
           Color: 85; 255; 255
           Enabled: true
-          Head Diameter: 0.300000012
-          Head Length: 0.200000003
-          Length: 0.300000012
+          Head Diameter: 0.30000001192092896
+          Head Length: 0.20000000298023224
+          Length: 0.30000001192092896
           Line Style: Billboards
-          Line Width: 0.100000001
+          Line Width: 0.10000000149011612
           Name: Path (global)
           Offset:
             X: 0
@@ -226,9 +245,10 @@ Visualization Manager:
             Z: 0
           Pose Color: 255; 85; 255
           Pose Style: None
-          Radius: 0.0299999993
-          Shaft Diameter: 0.100000001
-          Shaft Length: 0.100000001
+          Queue Size: 10
+          Radius: 0.029999999329447746
+          Shaft Diameter: 0.10000000149011612
+          Shaft Length: 0.10000000149011612
           Topic: /emv_lio/lidar/mapping/path
           Unreliable: false
           Value: true
@@ -237,11 +257,11 @@ Visualization Manager:
           Class: rviz/Path
           Color: 255; 0; 127
           Enabled: true
-          Head Diameter: 0.300000012
-          Head Length: 0.200000003
-          Length: 0.300000012
+          Head Diameter: 0.30000001192092896
+          Head Length: 0.20000000298023224
+          Length: 0.30000001192092896
           Line Style: Billboards
-          Line Width: 0.100000001
+          Line Width: 0.10000000149011612
           Name: Path (local)
           Offset:
             X: 0
@@ -249,17 +269,18 @@ Visualization Manager:
             Z: 0
           Pose Color: 255; 85; 255
           Pose Style: None
-          Radius: 0.0299999993
-          Shaft Diameter: 0.100000001
-          Shaft Length: 0.100000001
+          Queue Size: 10
+          Radius: 0.029999999329447746
+          Shaft Diameter: 0.10000000149011612
+          Shaft Length: 0.10000000149011612
           Topic: /emv_lio/lidar/imu/path
           Unreliable: false
           Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 10.3976326
-            Min Value: -2.51808357
+            Max Value: 10.397632598876953
+            Min Value: -2.5180835723876953
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -270,26 +291,24 @@ Visualization Manager:
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 255
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Cloud (raw)
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 2
-          Size (m): 0.300000012
+          Size (m): 0.30000001192092896
           Style: Points
           Topic: /emv_lio/lidar/deskew/cloud_deskewed
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
-        - Alpha: 0.200000003
+        - Alpha: 0.20000000298023224
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 15.4945631
-            Min Value: -1.53194034
+            Max Value: 1.7969880104064941
+            Min Value: -3.372225284576416
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -300,15 +319,13 @@ Visualization Manager:
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 128.5
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Dense Map
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 2
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /emv_lio/lidar/mapping/cloud_registered
           Unreliable: false
@@ -330,15 +347,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 100
           Min Color: 0; 0; 0
-          Min Intensity: 0.5
           Name: Global Map
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /emv_lio/lidar/mapping/map_global
           Unreliable: false
@@ -348,8 +363,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 24.4693489
-            Min Value: -2.40481901
+            Max Value: 24.469348907470703
+            Min Value: -2.4048190116882324
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -360,15 +375,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 255
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Local Map
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 2
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /emv_lio/lidar/mapping/map_local
           Unreliable: false
@@ -414,15 +427,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 113.419289
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: History cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.300000012
+          Size (m): 0.30000001192092896
           Style: Points
           Topic: /emv_lio/lidar/mapping/loop_closure_history_cloud
           Unreliable: false
@@ -432,8 +443,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 10.3976326
-            Min Value: -2.51808357
+            Max Value: 10.397632598876953
+            Min Value: -2.5180835723876953
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -444,15 +455,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 100
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Closed cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 5
-          Size (m): 0.300000012
+          Size (m): 0.30000001192092896
           Style: Points
           Topic: /emv_lio/lidar/mapping/loop_closure_corrected_cloud
           Unreliable: false
@@ -488,15 +497,13 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 170; 255; 255
-      Max Intensity: 1
       Min Color: 0; 0; 255
-      Min Intensity: 1
       Name: PointCloud
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 10
-      Size (m): 0.00999999978
+      Size (m): 0.009999999776482582
       Style: Points
       Topic: /emv_lio/vins/odometry/point_cloud_1
       Unreliable: false
@@ -530,15 +537,13 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 170; 255; 0
-      Max Intensity: 1
       Min Color: 170; 170; 0
-      Min Intensity: 0
       Name: PointCloud
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 10
-      Size (m): 0.00999999978
+      Size (m): 0.009999999776482582
       Style: Points
       Topic: /emv_lio/vins/odometry/point_cloud_2
       Unreliable: false
@@ -560,30 +565,30 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 42.6585159
+      Distance: 123.67536926269531
       Enable Stereo Rendering:
-        Stereo Eye Separation: 0.0599999987
+        Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Field of View: 0.7853981852531433
       Focal Point:
-        X: 19.5840416
-        Y: -14.3417082
-        Z: 44.3591843
+        X: 2.927057981491089
+        Y: -1.4460192918777466
+        Z: 0.06314647197723389
       Focal Shape Fixed Size: false
-      Focal Shape Size: 0.0500000007
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.00999999978
-      Pitch: 1.21979642
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 1.5597963333129883
       Target Frame: odom
-      Value: Orbit (rviz)
-      Yaw: 1.87039781
+      Yaw: 1.6454029083251953
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1056
+  Height: 1369
   Hide Left Dock: false
   Hide Right Dock: false
   Image:
@@ -594,7 +599,7 @@ Window Geometry:
     collapsed: false
   Loop image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000239000003dafc020000000efb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000190000000d700fffffffb0000001a0049006d0061006700650020004600650061007400750072006501000001be000000c10000001600fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000014004c006f006f007000200069006d00610067006500000004790000010a0000001600fffffffb000000160049006d00610067006500200044006500700074006800000003b7000001cc0000001600fffffffb0000000a0049006d0061006700650100000285000000aa0000001600fffffffb0000000a0049006d0061006700650100000335000000cd0000001600fffffffb0000000a0049006d0061006700650100000335000000cd00000000000000000000000100000111000003dafc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730100000028000003da000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b000000040fc0100000002fb0000000800540069006d00650000000000000004b00000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000003e9000003da00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000023900000503fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000331000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000014004c006f006f007000200069006d00610067006500000004790000010a0000001600fffffffb000000160049006d0061006700650020004400650070007400680100000372000001cc0000001600ffffff000000010000020a00000503fc0200000007fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001a0049006d00610067006500200046006500610074007500720065010000003b000001c60000001600fffffffb0000000a0049006d00610067006501000002070000019d0000001600fffffffb0000000a0049006d00610067006501000003aa000001940000001600fffffffb0000000a0049006d006100670065010000038a000001b40000000000000000fb0000000a00560069006500770073000000049e000000a0000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b000000040fc0100000002fb0000000800540069006d00650000000000000004b00000035c00fffffffb0000000800540069006d00650100000000000004500000000000000000000005b10000050300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -603,6 +608,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1855
-  X: 65
-  Y: 24
+  Width: 2560
+  X: 8
+  Y: 31
