@@ -5,7 +5,7 @@ project_name: "emv_lio"
 
 #common parameters
 imu_topic: "/ouster/imu"
-image_topic: "/thermal_cam1/image_raw8"
+image_topic: "/rgb_cam/image_raw"
 point_cloud_topic: "/ouster/points"
 
 # Lidar Params
@@ -29,19 +29,19 @@ camera_name: camera
 
 # Mono camera config
 image_width: 640
-image_height: 512
+image_height: 480
 mirror_parameters:
    xi: 1.9926618269451453
 distortion_parameters:
-   k1: -0.164479942748452
-   k2: 0.065146945532100
-   p1: 0.063844873151108
-   p2: 2.073446293418595e-05
+   k1: 0.189371246634119
+   k2: -0.246689861192475
+   p1: 0.0932029592560212
+   p2: 0.00114430273374253
 projection_parameters:
-   fx: 478.444252468160
-   fy: 478.657581328537
-   cx: 343.227017410900
-   cy: 268.486620696208
+   fx: 430.237387731618
+   fy: 429.828906586665
+   cx: 329.023573843919
+   cy: 244.128708878473
 fisheye_mask: "/config/fisheye_mask_720x540.jpg"
 
 #imu parameters       The more accurate parameters you provide, the worse performance

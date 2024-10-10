@@ -9,14 +9,15 @@
     <!--- SAM -->
     <include file="$(find emv_lio)/launch/include/module_sam_hesai.launch" />
 
-    <node pkg="image_transport" type="republish" name="republish" args="compressed in:=/thermal_cam1/image_raw raw out:=/thermal_cam1/image_raw" output="screen" respawn="true" />
+    <node pkg="image_transport" type="republish" name="republishrgb" args="compressed in:=/rgb_cam/image_raw raw out:=/rgb_cam/image_raw" output="screen" respawn="true" />
+    <node pkg="image_transport" type="republish" name="republishthermal" args="compressed in:=/thermal_cam1/image_raw raw out:=/thermal_cam1/image_raw" output="screen" respawn="true" />
     <node name="thermal_image_splitter" pkg="emv_lio" type="split_thermal_images.py" output="screen"/>
 
 
 
     <!-- <node pkg="rosbag" type="play" name="play" args="-r 1 -s 10 '/mnt/d/datasets/SCDF/smoke/SCDF_2024-09-20-16-22-46.bag'" /> -->
-    <node pkg="rosbag" type="play" name="play" args="-r 1 -s 79 '/mnt/d/datasets/SCDF/smoke/SCDF_2024-09-20-16-28-17.bag'" />
-    <!-- <node pkg="rosbag" type="play" name="play" args="-r 1 -s 95 '/mnt/d/datasets/SCDF/no_smoke/SCDF_2024-09-20-15-03-39.bag'" /> -->
+    <!-- <node pkg="rosbag" type="play" name="play" args="-r 1 -s 79 '/mnt/d/datasets/SCDF/smoke/SCDF_2024-09-20-16-28-17.bag'" /> -->
+    <node pkg="rosbag" type="play" name="play" args="-r 1 -s 95 '/mnt/d/datasets/SCDF/no_smoke/SCDF_2024-09-20-15-03-39.bag'" />
     <!-- <node pkg="rosbag" type="play" name="play" args="-r 1 -s 0 '/mnt/d/datasets/SCDF/no_smoke/SCDF_2024-09-20-15-16-04.bag'" /> -->
 
 </launch>

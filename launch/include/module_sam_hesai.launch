@@ -6,7 +6,8 @@
     <rosparam file="$(find emv_lio)/config/params_lidar.yaml" command="load" />
     
     <!-- VINS config -->
-    <param name="vins_config_file" type="string" value="$(find emv_lio)/config/params_t1.yaml" />
+    <!-- <param name="vins_config_file" type="string" value="$(find emv_lio)/config/params_t1.yaml" /> -->
+    <param name="vins_config_file" type="string" value="$(find emv_lio)/config/params_v1.yaml" />
     <param name="vins_config_file_1" type="string" value="$(find emv_lio)/config/params_camera1.yaml" />
     <param name="vins_config_file_2" type="string" value="$(find emv_lio)/config/params_camera2.yaml" />
     <param name="lio_config_file" type="string" value="$(find emv_lio)/config/params_lidar.yaml" />
