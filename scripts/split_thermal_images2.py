@@ -9,17 +9,17 @@ import numpy as np
 class ImageSplitter:
     def __init__(self):
         # Initialize node
-        rospy.init_node('image_splitter', anonymous=True)
+        rospy.init_node('image_splitter2', anonymous=True)
 
         # Create a CvBridge object
         self.bridge = CvBridge()
 
         # Subscribe to the merged image topic
-        self.image_sub = rospy.Subscriber("/thermal_cam1/image_raw", Image, self.image_callback)
+        self.image_sub = rospy.Subscriber("/thermal_cam2/image_raw", Image, self.image_callback)
 
         # Publishers for the two split images
-        self.image_pub_left = rospy.Publisher("/thermal_cam1/image_raw8", Image, queue_size=10)
-        self.image_pub_right = rospy.Publisher("/thermal_cam1/image_raw16", Image, queue_size=10)
+        self.image_pub_left = rospy.Publisher("/thermal_cam2/image_raw8", Image, queue_size=10)
+        self.image_pub_right = rospy.Publisher("/thermal_cam2/image_raw16", Image, queue_size=10)
 
     def image_callback(self, msg):
         try:

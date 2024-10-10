@@ -7,8 +7,8 @@ Panels:
         - /Links1
         - /Visual Feature1
         - /Visual Odometry1
-        - /Lidar Odometry1/Cloud (raw)1
-        - /Lidar Odometry1/Dense Map1
+        - /Lidar Odometry1
+        - /Odometry1
       Splitter Ratio: 0.45996275544166565
     Tree Height: 758
   - Class: rviz/Selection
@@ -306,8 +306,8 @@ Visualization Manager:
         - Alpha: 0.20000000298023224
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 3.679142475128174
-            Min Value: -1.6063835620880127
+            Max Value: 3.410527229309082
+            Min Value: -1.8493455648422241
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -549,6 +549,41 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: false
       Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /Odometry
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
@@ -564,7 +599,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 24.341318130493164
+      Distance: 18.849918365478516
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

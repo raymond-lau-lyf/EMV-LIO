@@ -137,6 +137,7 @@ target_link_libraries(${PROJECT_NAME}_mapOptmization PRIVATE ${catkin_LIBRARIES}
 ### Python Scripts
 ######################
 catkin_install_python(PROGRAMS
-  scripts/split_thermal_images.py  # Add this line to install your Python script
+  scripts/split_thermal_images1.py  # Add this line to install your Python script
+  scripts/split_thermal_images2.py  # Add this line to install your Python script
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

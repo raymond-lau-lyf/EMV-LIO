@@ -5,7 +5,7 @@
     <rosparam file="$(find emv_lio)/config/params_lidar.yaml" command="load" />
     <!-- VINS config -->
     <!-- <param name="vins_config_file" type="string" value="$(find emv_lio)/config/params_t1.yaml" /> -->
-    <param name="vins_config_file" type="string" value="$(find emv_lio)/config/params_v1.yaml" />
+    <param name="vins_config_file" type="string" value="$(find emv_lio)/config/params_t1.yaml" />
     
     <!-- Lidar odometry -->
     <node pkg="$(arg project)"      type="$(arg project)_imuPreintegration"   name="$(arg project)_imuPreintegration"    output="screen"     respawn="true"/>
