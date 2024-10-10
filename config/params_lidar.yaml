@@ -23,7 +23,7 @@ emv_lio:
   downsampleRate: 2                           # default: 1. Downsample your data if too many points. i.e., 16 = 64 / 4, 16 = 16 / 1 
   lidarMaxRange: 100.0
   lidarMinRange: 0.1
-  NUM_OF_CAM: 1
+  NUM_OF_CAM: 2
   feature_enable: 0
   remove_noise: 0
 
