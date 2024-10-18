@@ -21,7 +21,7 @@ emv_lio:
   lidar_type: 1                               # 1 for ouster, 2 for hesai, 3 for velodyne
   timeField: "t"                      # point timestamp field, Velodyne - "time", Ouster - "t", hesai - "timestamp"
   downsampleRate: 2                           # default: 1. Downsample your data if too many points. i.e., 16 = 64 / 4, 16 = 16 / 1 
-  lidarMaxRange: 100.0
+  lidarMaxRange: 500.0
   lidarMinRange: 0.1
   NUM_OF_CAM: 2
   feature_enable: 0
@@ -62,7 +62,7 @@ emv_lio:
   rotation_tollerance: 1000 # radians
 
   # CPU Params
-  numberOfCores: 4                              # number of cores for mapping optimization
+  numberOfCores: 8                              # number of cores for mapping optimization
   mappingProcessInterval: 0.05                   # seconds, regulate mapping frequency
 
   # Surrounding map

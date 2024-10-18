@@ -5,7 +5,7 @@ project_name: "emv_lio"
 
 #common parameters
 imu_topic: "/ouster/imu"
-image_topic: "/thermal_cam1/image_raw8"
+image_topic: "/camera/edge"
 point_cloud_topic: "/ouster/points"
 
 # Lidar Params
